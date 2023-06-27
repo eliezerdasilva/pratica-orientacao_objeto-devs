@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7acf9643-ea32-417e-8ca1-2a6911780a9e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Revisao/LoopWhile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Revisao/Loopfor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Revisao/Matrizes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Revisao/Vetores_Arrays.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Revisao/for_each.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Revisao/LoopWhile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Revisao/Loopfor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Revisao/Matrizes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Revisao/Vetores_Arrays.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Revisao/for_each.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exemplo01/Carro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exemplo01/TesteCarro.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2RmmJwLM6vMOSASS26FwGY3dXnT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/eliez/OneDrive/Documentos/devs/orientacao_objeto/pratica-orientacao_objeto-devs"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7acf9643-ea32-417e-8ca1-2a6911780a9e" name="Changes" comment="" />
+      <created>1687863563902</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687863563902</updated>
+    </task>
+    <servers />
+  </component>
+</project>
