@@ -1,6 +1,10 @@
-package ravin.modelos;
+package org.example.model;
 
-import ravin.enumeradores.TipoProduto;
+
+import org.example.enumerador.TipoProduto;
+
+import java.sql.Timestamp;
+import java.time.LocalTime;
 
 public class Produto {
 	private int id;
@@ -9,10 +13,16 @@ public class Produto {
 	private String codigo;
 	private double precoCusto;
 	private double precoVenda;
-	private String tempoPreparo;
+	private LocalTime tempoPreparo;
 	private String observacoes;
 	private TipoProduto tipoProduto;
-	private boolean ativo;
+//private statusProduto StatusProduto;
+
+
+	private Timestamp CriedoEm;
+	private Timestamp AlteradoEm ;
+	private Funcionario CriadoPor;
+	private Funcionario AlteradoPor;
 	
 	public Produto() {
 		// TODO Auto-generated constructor stub
@@ -27,10 +37,10 @@ public class Produto {
 		this.codigo = codigo;
 		this.precoCusto = precoCusto;
 		this.precoVenda = precoVenda;
-		this.tempoPreparo = tempoPreparo;
+		//this.tempoPreparo = tempoPreparo;
 		this.observacoes = observacoes;
 		this.tipoProduto = tipoProduto;
-		this.ativo = ativo;
+		//this.ativo = ativo;
 	}
 
 	public int getId() {
@@ -80,7 +90,7 @@ public class Produto {
 	public void setPrecoVenda(double precoVenda) {
 		this.precoVenda = precoVenda;
 	}
-
+/*
 	public String getTempoPreparo() {
 		return tempoPreparo;
 	}
@@ -88,7 +98,7 @@ public class Produto {
 	public void setTempoPreparo(String tempoPreparo) {
 		this.tempoPreparo = tempoPreparo;
 	}
-
+*/
 	public String getObservacoes() {
 		return observacoes;
 	}
@@ -104,7 +114,7 @@ public class Produto {
 	public void setTipoProduto(TipoProduto tipoProduto) {
 		this.tipoProduto = tipoProduto;
 	}
-
+/*
 	public boolean isAtivo() {
 		return ativo;
 	}
@@ -112,5 +122,5 @@ public class Produto {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
-	
+	*/
 }

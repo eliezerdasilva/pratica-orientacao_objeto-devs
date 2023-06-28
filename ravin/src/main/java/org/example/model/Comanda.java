@@ -1,35 +1,42 @@
-package ravin.modelos;
+package org.example.model;
 
+import org.example.enumerador.FormaPagamento;
+import org.example.enumerador.StatusComanda;
+
+import java.sql.Timestamp;
 import java.util.List;
 
-import ravin.enumeradores.StatusComanda;
 
 public class Comanda {
 
 	private int id;
-	private Mesa mesa;
+	private Mesa mesaId;
 	private Cliente cliente;
 	private List<Pedido> pedidos;
-	private int quantidadeMaxPessoas;
-	private String codigo;
-	private String observacoes;
+	private float valorTotal;
+	private FormaPagamento formaPagamento;
 	private StatusComanda statusComanda;
+	private Timestamp CriedoEm;
+	private Timestamp AlteradoEm ;
+	private Funcionario CriadoPor;
+	private Funcionario AlteradoPor;
 
 	public Comanda() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Comanda(int id, Mesa mesa, Cliente cliente, List<Pedido> pedidos, int quantidadeMaxPessoas, String codigo,
-			String observacoes, StatusComanda statusComanda) {
-		super();
+	public Comanda(int id, Mesa mesaId, Cliente cliente, List<Pedido> pedidos, float valorTotal, FormaPagamento formaPagamento, StatusComanda statusComanda, Timestamp criedoEm, Timestamp alteradoEm, Funcionario criadoPor, Funcionario alteradoPor) {
 		this.id = id;
-		this.mesa = mesa;
+		this.mesaId = mesaId;
 		this.cliente = cliente;
 		this.pedidos = pedidos;
-		this.quantidadeMaxPessoas = quantidadeMaxPessoas;
-		this.codigo = codigo;
-		this.observacoes = observacoes;
+		this.valorTotal = valorTotal;
+		this.formaPagamento = formaPagamento;
 		this.statusComanda = statusComanda;
+		CriedoEm = criedoEm;
+		AlteradoEm = alteradoEm;
+		CriadoPor = criadoPor;
+		AlteradoPor = alteradoPor;
 	}
 
 	public int getId() {
@@ -40,12 +47,12 @@ public class Comanda {
 		this.id = id;
 	}
 
-	public Mesa getMesa() {
-		return mesa;
+	public Mesa getMesaId() {
+		return mesaId;
 	}
 
-	public void setMesa(Mesa mesa) {
-		this.mesa = mesa;
+	public void setMesaId(Mesa mesaId) {
+		this.mesaId = mesaId;
 	}
 
 	public Cliente getCliente() {
@@ -64,35 +71,59 @@ public class Comanda {
 		this.pedidos = pedidos;
 	}
 
-	public int getQuantidadeMaxPessoas() {
-		return quantidadeMaxPessoas;
+	public float getValorTotal() {
+		return valorTotal;
 	}
 
-	public void setQuantidadeMaxPessoas(int quantidadeMaxPessoas) {
-		this.quantidadeMaxPessoas = quantidadeMaxPessoas;
+	public void setValorTotal(float valorTotal) {
+		this.valorTotal = valorTotal;
 	}
 
-	public String getCodigo() {
-		return codigo;
+	public FormaPagamento getFormaPagamento() {
+		return formaPagamento;
 	}
 
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
+		this.formaPagamento = formaPagamento;
 	}
 
-	public String getObservacoes() {
-		return observacoes;
-	}
-
-	public void setObservacoes(String observacoes) {
-		this.observacoes = observacoes;
-	}
-
-	public StatusComanda getStatus() {
+	public StatusComanda getStatusComanda() {
 		return statusComanda;
 	}
 
-	public void setStatus(StatusComanda statusComanda) {
+	public void setStatusComanda(StatusComanda statusComanda) {
 		this.statusComanda = statusComanda;
+	}
+
+	public Timestamp getCriedoEm() {
+		return CriedoEm;
+	}
+
+	public void setCriedoEm(Timestamp criedoEm) {
+		CriedoEm = criedoEm;
+	}
+
+	public Timestamp getAlteradoEm() {
+		return AlteradoEm;
+	}
+
+	public void setAlteradoEm(Timestamp alteradoEm) {
+		AlteradoEm = alteradoEm;
+	}
+
+	public Funcionario getCriadoPor() {
+		return CriadoPor;
+	}
+
+	public void setCriadoPor(Funcionario criadoPor) {
+		CriadoPor = criadoPor;
+	}
+
+	public Funcionario getAlteradoPor() {
+		return AlteradoPor;
+	}
+
+	public void setAlteradoPor(Funcionario alteradoPor) {
+		AlteradoPor = alteradoPor;
 	}
 }

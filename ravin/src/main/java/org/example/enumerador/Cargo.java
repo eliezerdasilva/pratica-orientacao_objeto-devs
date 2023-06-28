@@ -1,4 +1,4 @@
-package ravin.enumeradores;
+package org.example.enumerador;
 
 public enum Cargo {
 	

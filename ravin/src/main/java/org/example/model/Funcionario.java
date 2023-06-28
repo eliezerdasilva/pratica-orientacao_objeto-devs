@@ -1,15 +1,21 @@
-package ravin.modelos;
+package org.example.model;
 
+import org.example.enumerador.Cargo;
+import org.example.enumerador.Disponibilidade;
+import org.example.enumerador.Escolaridade;
+import org.example.enumerador.EstadoCivil;
+
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.Date;
 
-import ravin.enumeradores.Cargo;
-import ravin.enumeradores.Disponibilidade;
-import ravin.enumeradores.Escolaridade;
-import ravin.enumeradores.EstadoCivil;
+
 
 public class Funcionario extends Pessoa {
 	
-	private String rg;
+	private int rg;
+
+	private Long numCArteiraTrabalho;
 	private EstadoCivil estadoCivil;
 	private Escolaridade escolaridade;
 	private Cargo cargo;
@@ -17,32 +23,37 @@ public class Funcionario extends Pessoa {
 	private Date dataAdmissao;
 	private Date dataDemissao;
 	private Disponibilidade disponibilidade;
+	private Timestamp CriedoEm;
+	private Timestamp AlteradoEm ;
+	private Funcionario CriadoPor;
+	private Funcionario AlteradoPor;
+
+	private Usuario usuario;
 
 	
 	public Funcionario() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Funcionario(String rg, EstadoCivil estadoCivil, Escolaridade escolaridade, Cargo cargo, Date dataAdmissao,
-			Date dataDemissao, Disponibilidade disponibilidade, int pis) {
-		super();
+	public Funcionario(int id, String nome, Long cpf, String telefone, Endereco endereco, LocalDate dataNascimento, String observacao, boolean status, int rg, Long numCArteiraTrabalho, EstadoCivil estadoCivil, Escolaridade escolaridade, Cargo cargo, int pis, Date dataAdmissao, Date dataDemissao, Disponibilidade disponibilidade, Timestamp criedoEm, Timestamp alteradoEm, Funcionario criadoPor, Funcionario alteradoPor, Usuario usuario) {
+		super(id, nome, cpf, telefone, endereco, dataNascimento, observacao, status);
 		this.rg = rg;
+		this.numCArteiraTrabalho = numCArteiraTrabalho;
 		this.estadoCivil = estadoCivil;
 		this.escolaridade = escolaridade;
 		this.cargo = cargo;
+		this.pis = pis;
 		this.dataAdmissao = dataAdmissao;
 		this.dataDemissao = dataDemissao;
 		this.disponibilidade = disponibilidade;
-		this.pis = pis;
+		CriedoEm = criedoEm;
+		AlteradoEm = alteradoEm;
+		CriadoPor = criadoPor;
+		AlteradoPor = alteradoPor;
+		this.usuario = usuario;
 	}
 
-	public String getRg() {
-		return rg;
-	}
 
-	public void setRg(String rg) {
-		this.rg = rg;
-	}
 
 	public EstadoCivil getEstadoCivil() {
 		return estadoCivil;

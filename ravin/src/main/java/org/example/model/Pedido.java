@@ -1,9 +1,11 @@
-package ravin.modelos;
+package org.example.model;
 
+
+import org.example.enumerador.StatusPreparoPedido;
 
 import java.sql.Timestamp;
 
-import ravin.enumeradores.StatusPreparoPedido;
+
 
 public class Pedido {
 	
@@ -16,6 +18,11 @@ public class Pedido {
 	private StatusPreparoPedido statusPreparo;
 	private String observacao;
 	private int quantidade;
+
+	private Timestamp CriedoEm;
+	private Timestamp AlteradoEm ;
+	private Funcionario CriadoPor;
+	private Funcionario AlteradoPor;
 	
 	public Pedido() {
 		// TODO Auto-generated constructor stub
