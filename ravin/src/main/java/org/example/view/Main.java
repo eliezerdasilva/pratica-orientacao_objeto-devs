@@ -4,8 +4,10 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente();
+        telaCadastroCliente.setVisible(true);
+
+        
     }
 
-    String nome = JOptionPane.showInputDialog(null,"");
 }
