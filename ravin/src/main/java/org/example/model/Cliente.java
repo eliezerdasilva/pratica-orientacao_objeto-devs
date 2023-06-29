@@ -6,6 +6,7 @@ import org.example.enumerador.Alergia;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 
+
 public class Cliente extends Pessoa {
 	private Alergia alergias;
 	private boolean vip;
@@ -38,11 +39,53 @@ public class Cliente extends Pessoa {
 		AlteradoPor = alteradoPor;
 	}
 
-	public boolean isVip() {
-		return vip;
-	}
+    public Alergia getAlergias() {
+        return alergias;
+    }
 
-	public void setVip(boolean vip) {
-		this.vip = vip;
-	}	
+    public void setAlergias(Alergia alergias) {
+        this.alergias = alergias;
+    }
+
+    public boolean isVip() {
+        return vip;
+    }
+
+    public void setVip(boolean vip) {
+        this.vip = vip;
+    }
+
+    public Timestamp getCriedoEm() {
+        return CriedoEm;
+    }
+
+    public void setCriedoEm(Timestamp CriedoEm) {
+        this.CriedoEm = CriedoEm;
+    }
+
+    public Timestamp getAlteradoEm() {
+        return AlteradoEm;
+    }
+
+    public void setAlteradoEm(Timestamp AlteradoEm) {
+        this.AlteradoEm = AlteradoEm;
+    }
+
+    public Funcionario getCriadoPor() {
+        return CriadoPor;
+    }
+
+    public void setCriadoPor(Funcionario CriadoPor) {
+        this.CriadoPor = CriadoPor;
+    }
+
+    public Funcionario getAlteradoPor() {
+        return AlteradoPor;
+    }
+
+    public void setAlteradoPor(Funcionario AlteradoPor) {
+        this.AlteradoPor = AlteradoPor;
+    }
+
+	
 }
