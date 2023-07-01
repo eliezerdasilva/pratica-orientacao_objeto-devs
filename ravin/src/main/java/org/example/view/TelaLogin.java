@@ -18,6 +18,7 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
         setLocationRelativeTo(null);
+        setSize(400, 400);
         getContentPane().setBackground(new Color  (204,255,255));
     }
 
