@@ -5,7 +5,8 @@ public enum Alergia {
     OVO,
     TRIGO,
     CAMARAO,
-   GLUTEN 
+    GLUTEN ,
+    PIMENTA
     ;
 
 }
