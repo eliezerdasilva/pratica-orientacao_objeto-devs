@@ -1,13 +1,16 @@
+package org.example.utils;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package org.example.controller;
-
 
 /**
  *
- * @author frete
+ * @author eliez
  */
-public class ComandaController {
+public class ConstantesTextos {
+    
+    public static final String ALTERAR_FUNCIONARIO = "Alterar Funcionario";
+    
 }
