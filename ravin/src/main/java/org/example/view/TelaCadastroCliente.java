@@ -1,7 +1,24 @@
-
 package org.example.view;
 
+import java.awt.event.ActionListener;
+import java.io.ObjectInputFilter.Status;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import org.example.controller.ClienteController;
+import org.example.enumerador.Alergia;
+import org.example.model.Cliente;
+import org.example.model.Funcionario;
+import org.example.repository.RepositoryCliente;
+import org.ravin.mensagens.TelaDadosInvalidos;
+import org.ravin.mensagens.TelaSucesso;
 
 /**
  *
@@ -9,17 +26,23 @@ import javax.swing.JFrame;
  */
 public class TelaCadastroCliente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaCadastroCliente
-     */
-    public TelaCadastroCliente() {
-     
+    private ClienteController clienteController;
+    private Cliente cliente;
+    private RepositoryCliente repositotyCliente;
+    private ArrayList<String> listErros;
+    private TelaSucesso telaSucesso;
+    private TelaDadosInvalidos telaDadosInvalidos;
+    private Funcionario funcionario;
+    private boolean status;
+
+    public TelaCadastroCliente(Funcionario funcionario) {  
         initComponents();
-         setSize(800, 900);
+        setSize(800, 900);
         grupo.add(jRadioButtonInativo);
         grupo.add(jRadioButtonAtivo);
+        this.funcionario = funcionario;
+              
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -29,7 +52,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         txtCep = new javax.swing.JTextField();
-        txRua = new javax.swing.JTextField();
+        txtRua = new javax.swing.JTextField();
         comboBoxEstado = new javax.swing.JComboBox<>();
         comboBoxCidade = new javax.swing.JComboBox<>();
         txtBairro = new javax.swing.JTextField();
@@ -41,7 +64,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         buttonBuscar = new javax.swing.JButton();
         buttonCadastrar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelEsquerdo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txtCpf = new javax.swing.JTextField();
         jRadioButtonInativo = new javax.swing.JRadioButton();
@@ -79,12 +102,12 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(txtCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 250, 30));
 
-        txRua.addActionListener(new java.awt.event.ActionListener() {
+        txtRua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txRuaActionPerformed(evt);
+                txtRuaActionPerformed(evt);
             }
         });
-        jPanel1.add(txRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 250, 30));
+        jPanel1.add(txtRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 250, 30));
 
         jPanel1.add(comboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 250, 30));
 
@@ -136,26 +159,21 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 310, 520));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelEsquerdo.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelEsquerdo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Cpf");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
-        jPanel2.add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 170, 30));
+        jPanelEsquerdo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        jPanelEsquerdo.add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 170, 30));
 
         jRadioButtonInativo.setText("Inativo");
-        jRadioButtonInativo.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentResized(java.awt.event.ComponentEvent evt) {
-                jRadioButtonInativoComponentResized(evt);
-            }
-        });
         jRadioButtonInativo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonInativoActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButtonInativo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, -1));
+        jPanelEsquerdo.add(jRadioButtonInativo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, -1));
 
         jRadioButtonAtivo.setText("Ativo");
         jRadioButtonAtivo.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -163,43 +181,61 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
                 jRadioButtonInativoComponentResized(evt);
             }
         });
-        jPanel2.add(jRadioButtonAtivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
+        jRadioButtonAtivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonAtivoActionPerformed(evt);
+            }
+        });
+        jPanelEsquerdo.add(jRadioButtonAtivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Data Nascimento");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+        jPanelEsquerdo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Alergias");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+        jPanelEsquerdo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setText("Status");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+        jPanelEsquerdo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setText("Telefone");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
-        jPanel2.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 170, 30));
-        jPanel2.add(txtDataNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 170, 30));
-        jPanel2.add(txtObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 170, 30));
-        jPanel2.add(txtTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 170, 30));
+        jPanelEsquerdo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        jPanelEsquerdo.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 170, 30));
+        jPanelEsquerdo.add(txtDataNascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 170, 30));
+        jPanelEsquerdo.add(txtObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 170, 30));
+        jPanelEsquerdo.add(txtTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 170, 30));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel18.setText("Observação");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
+        jPanelEsquerdo.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
 
         jRadioButtonVip.setText("Vip");
-        jPanel2.add(jRadioButtonVip, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
+        jPanelEsquerdo.add(jRadioButtonVip, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Nome");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+        jPanelEsquerdo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 170, 30));
+        jComboBox3.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jComboBox3AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+        jPanelEsquerdo.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 170, 30));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 300, 520));
+        getContentPane().add(jPanelEsquerdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 300, 520));
 
         buttonTelaPedidoComanda.setText("Pedido");
         buttonTelaPedidoComanda.addActionListener(new java.awt.event.ActionListener() {
@@ -221,74 +257,105 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButtonInativoComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jRadioButtonInativoComponentResized
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_jRadioButtonInativoComponentResized
 
-    private void jRadioButtonInativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonInativoActionPerformed
-   
-    }//GEN-LAST:event_jRadioButtonInativoActionPerformed
-
     private void buttonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarActionPerformed
-    
+        TelaCadastroCardapio telaMenuPrincipal = new TelaCadastroCardapio();
+        // Torna a outra janela visível
+        telaMenuPrincipal.setVisible(true);
+        dispose();
     }//GEN-LAST:event_buttonBuscarActionPerformed
 
     private void buttonTelaPedidoComandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTelaPedidoComandaActionPerformed
-               TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal();
-                telaMenuPrincipal.setVisible(true);
-                dispose();
-                                      
+        TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal();
+        telaMenuPrincipal.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_buttonTelaPedidoComandaActionPerformed
 
-    private void txRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txRuaActionPerformed
+    private void txtRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRuaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txRuaActionPerformed
+    }//GEN-LAST:event_txtRuaActionPerformed
 
     private void buttonVoltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltar1ActionPerformed
         TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal();
-                // Torna a outra janela visível
-                telaMenuPrincipal.setVisible(true);
-                dispose();
+        // Torna a outra janela visível
+        telaMenuPrincipal.setVisible(true);
+        dispose();
     }//GEN-LAST:event_buttonVoltar1ActionPerformed
 
     private void buttonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarActionPerformed
-        String nome = txtNome.getText();
+
+        clienteController = new ClienteController();
+        listErros = new ArrayList<>();
+        listErros = clienteController.validarDados(cliente);
+        cliente = new Cliente();
+        
+        cliente.setNome(txtNome.getText());
+        cliente.setAlergias(Alergia.valueOf(jComboBox3.getSelectedItem()));
+        cliente.setAlteradoEm(new Timestamp(System.currentTimeMillis()));
+        cliente.setAlteradoPor(funcionario);
+        cliente.setCriadoPor(funcionario);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate localDate = LocalDate.parse(txtDataNascimento.getText(), formatter);
+        cliente.setDataNascimento(localDate);
+        /*Endereco*/
+        cliente.getEndereco().setBairro(txtBairro.getText());
+        cliente.getEndereco().setCep(Long.valueOf(txtCep.getText()));
+        cliente.getEndereco().setCidade(String.valueOf( comboBoxEstado.getSelectedItem()));
+        cliente.getEndereco().setEstado(String.valueOf( comboBoxCidade.getSelectedItem()));
+        cliente.getEndereco().setRua(txtRua.getText());
+        cliente.setTelefone(txtTelefone.getText());
+        cliente.setStatus(status);
+        cliente.setObservacao(observacao);
+
+
+        
+
+        if (listErros.isEmpty()) {
+            boolean update = repositotyCliente.cadastraCliente(cliente);
+            if (update) {
+                telaSucesso = new TelaSucesso("Cadastro realizado");
+                telaSucesso.setVisible(true);
+                dispose();
+            } else {
+                telaSucesso = new TelaSucesso("Cadastro não realizado");
+                telaSucesso.setVisible(true);
+                dispose();
+            }
+        } else {
+            telaDadosInvalidos = new TelaDadosInvalidos(listErros);
+            telaDadosInvalidos.setVisible(true);
+            dispose();
+        }
+
     }//GEN-LAST:event_buttonCadastrarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void jComboBox3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jComboBox3AncestorAdded
+        List<Alergia> listaCores = new ArrayList<>();
+        for (Alergia alergia : Alergia.values()) {
+            listaCores.add(alergia);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaCadastroCliente().setVisible(true);
-                
-            }
-        });
-    }
+        // Exemplo de utilização do ArrayList com os dados do enum
+        for (Alergia alergia : listaCores) {
+            jComboBox3.addItem(alergia.toString());
+        }
+    }//GEN-LAST:event_jComboBox3AncestorAdded
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+     
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jRadioButtonAtivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonAtivoActionPerformed
+       status = true;
+    }//GEN-LAST:event_jRadioButtonAtivoActionPerformed
+
+    private void jRadioButtonInativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonInativoActionPerformed
+        status = false;
+    }//GEN-LAST:event_jRadioButtonInativoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonBuscar;
@@ -314,17 +381,17 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelEsquerdo;
     private javax.swing.JRadioButton jRadioButtonAtivo;
     private javax.swing.JRadioButton jRadioButtonInativo;
     private javax.swing.JRadioButton jRadioButtonVip;
-    private javax.swing.JTextField txRua;
     private javax.swing.JTextField txtBairro;
     private javax.swing.JTextField txtCep;
     private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtDataNascimento;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtObservacao;
+    private javax.swing.JTextField txtRua;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }

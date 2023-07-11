@@ -6,6 +6,7 @@ package org.ravin.mensagens;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.time.LocalDate;
 
 /**
  *
@@ -13,21 +14,16 @@ import java.io.StringWriter;
  */
 public class Teste {
     
-    public static void main(String[] args) {
-        System.out.println("Eee");
-        try {
-            // Código que pode lançar uma exceção
-            int resultado = 10 / 0;
-        } catch (Exception ex) {
-            // Capturando a exceção e convertendo em uma string
-            StringWriter sw = new StringWriter();
-            PrintWriter pw = new PrintWriter(sw);
-            ex.printStackTrace(pw);
-            String excecaoString = sw.toString();
+   public static void main(String[] args) {
+        LocalDate data1 = LocalDate.of(2021, 7, 10);
+        LocalDate data2 = LocalDate.of(2021, 7, 11);
 
-            // Imprimindo a string da exceção
-            System.out.println(excecaoString);
+        if (data1.isAfter(data2)) {
+            System.out.println("A data1 é posterior à data2");
+        } else {
+            System.out.println("A data1 não é posterior à data2");
         }
+    }
     
 }
-}
+

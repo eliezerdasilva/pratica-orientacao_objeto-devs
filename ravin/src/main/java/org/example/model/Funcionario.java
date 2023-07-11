@@ -9,105 +9,116 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.Date;
 
-
-
 public class Funcionario extends Pessoa {
-	
-	private int rg;
 
-	private Long numCArteiraTrabalho;
-	private EstadoCivil estadoCivil;
-	private Escolaridade escolaridade;
-	private Cargo cargo;
-	private int pis;
-	private Date dataAdmissao;
-	private Date dataDemissao;
-	private Disponibilidade disponibilidade;
-	private Timestamp CriedoEm;
-	private Timestamp AlteradoEm ;
-	private Funcionario CriadoPor;
-	private Funcionario AlteradoPor;
+    private int rg;
 
-	private Usuario usuario;
+    private Long numCArteiraTrabalho;
+    private EstadoCivil estadoCivil;
+    private Escolaridade escolaridade;
+    private Cargo cargo;
+    private int pis;
+    private Date dataAdmissao;
+    private Date dataDemissao;
+    private Disponibilidade disponibilidade;
+    private Usuario usuario;
 
-	
-	public Funcionario() {
-		// TODO Auto-generated constructor stub
-	}
+    public Funcionario() {
+        // TODO Auto-generated constructor stub
+    }
 
-	public Funcionario(int id, String nome, Long cpf, String telefone, Endereco endereco, LocalDate dataNascimento, String observacao, boolean status, int rg, Long numCArteiraTrabalho, EstadoCivil estadoCivil, Escolaridade escolaridade, Cargo cargo, int pis, Date dataAdmissao, Date dataDemissao, Disponibilidade disponibilidade, Timestamp criedoEm, Timestamp alteradoEm, Funcionario criadoPor, Funcionario alteradoPor, Usuario usuario) {
-		super(id, nome, cpf, telefone, endereco, dataNascimento, observacao, status);
-		this.rg = rg;
-		this.numCArteiraTrabalho = numCArteiraTrabalho;
-		this.estadoCivil = estadoCivil;
-		this.escolaridade = escolaridade;
-		this.cargo = cargo;
-		this.pis = pis;
-		this.dataAdmissao = dataAdmissao;
-		this.dataDemissao = dataDemissao;
-		this.disponibilidade = disponibilidade;
-		CriedoEm = criedoEm;
-		AlteradoEm = alteradoEm;
-		CriadoPor = criadoPor;
-		AlteradoPor = alteradoPor;
-		this.usuario = usuario;
-	}
+    public Funcionario(int id, String nome, Long cpf, String telefone, Endereco endereco, LocalDate dataNascimento, String observacao, boolean status, int rg, Long numCArteiraTrabalho, EstadoCivil estadoCivil, Escolaridade escolaridade, Cargo cargo, int pis, Date dataAdmissao, Date dataDemissao, Disponibilidade disponibilidade, Timestamp criedoEm, Timestamp alteradoEm, Funcionario criadoPor, Funcionario alteradoPor, Usuario usuario) {
+        super(id, nome, cpf, telefone, endereco, dataNascimento, observacao, status);
+        this.rg = rg;
+        this.numCArteiraTrabalho = numCArteiraTrabalho;
+        this.estadoCivil = estadoCivil;
+        this.escolaridade = escolaridade;
+        this.cargo = cargo;
+        this.pis = pis;
+        this.dataAdmissao = dataAdmissao;
+        this.dataDemissao = dataDemissao;
+        this.disponibilidade = disponibilidade;
+        this.usuario = usuario;
+    }
 
+    public EstadoCivil getEstadoCivil() {
+        return estadoCivil;
+    }
 
+    public void setEstadoCivil(EstadoCivil estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
 
-	public EstadoCivil getEstadoCivil() {
-		return estadoCivil;
-	}
+    public Escolaridade getEscolaridade() {
+        return escolaridade;
+    }
 
-	public void setEstadoCivil(EstadoCivil estadoCivil) {
-		this.estadoCivil = estadoCivil;
-	}
+    public void setEscolaridade(Escolaridade escolaridade) {
+        this.escolaridade = escolaridade;
+    }
 
-	public Escolaridade getEscolaridade() {
-		return escolaridade;
-	}
+    public Cargo getCargo() {
+        return cargo;
+    }
 
-	public void setEscolaridade(Escolaridade escolaridade) {
-		this.escolaridade = escolaridade;
-	}
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
+    }
 
-	public Cargo getCargo() {
-		return cargo;
-	}
+    public Date getDataAdmissao() {
+        return dataAdmissao;
+    }
 
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
-	}
+    public void setDataAdmissao(Date dataAdmissao) {
+        this.dataAdmissao = dataAdmissao;
+    }
 
-	public Date getDataAdmissao() {
-		return dataAdmissao;
-	}
+    public Date getDataDemissao() {
+        return dataDemissao;
+    }
 
-	public void setDataAdmissao(Date dataAdmissao) {
-		this.dataAdmissao = dataAdmissao;
-	}
+    public void setDataDemissao(Date dataDemissao) {
+        this.dataDemissao = dataDemissao;
+    }
 
-	public Date getDataDemissao() {
-		return dataDemissao;
-	}
+    public Disponibilidade getDisponibilidade() {
+        return disponibilidade;
+    }
 
-	public void setDataDemissao(Date dataDemissao) {
-		this.dataDemissao = dataDemissao;
-	}
+    public void setDisponibilidade(Disponibilidade disponibilidade) {
+        this.disponibilidade = disponibilidade;
+    }
 
-	public Disponibilidade getDisponibilidade() {
-		return disponibilidade;
-	}
+    public int getPis() {
+        return pis;
+    }
 
-	public void setDisponibilidade(Disponibilidade disponibilidade) {
-		this.disponibilidade = disponibilidade;
-	}
+    public void setPis(int pis) {
+        this.pis = pis;
+    }
 
-	public int getPis() {
-		return pis;
-	}
+    public int getRg() {
+        return rg;
+    }
 
-	public void setPis(int pis) {
-		this.pis = pis;
-	}
+    public void setRg(int rg) {
+        this.rg = rg;
+    }
+
+    public Long getNumCArteiraTrabalho() {
+        return numCArteiraTrabalho;
+    }
+
+    public void setNumCArteiraTrabalho(Long numCArteiraTrabalho) {
+        this.numCArteiraTrabalho = numCArteiraTrabalho;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
 }

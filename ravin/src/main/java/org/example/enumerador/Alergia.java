@@ -9,4 +9,8 @@ public enum Alergia {
     PIMENTA
     ;
 
+    public static Alergia valueOf(Object selectedItem) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

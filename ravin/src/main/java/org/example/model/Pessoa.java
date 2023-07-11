@@ -1,9 +1,8 @@
 package org.example.model;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
 
-public abstract class Pessoa {
+public abstract class Pessoa extends Auditavel{
 
     private int id ;
 
@@ -22,11 +21,6 @@ public abstract class Pessoa {
     private String observacao;
 
     private boolean status;
-
-    private Timestamp CriedoEm;
-    private Timestamp AlteradoEm ;
-    private Funcionario CriadoPor;
-    private Funcionario AlteradoPor;
 
     public Pessoa() {
     }
