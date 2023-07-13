@@ -28,6 +28,12 @@ public class Produto {
 		// TODO Auto-generated constructor stub
 	}
 
+    public Produto(String nome, String observacoes) {
+        this.nome = nome;
+        this.observacoes = observacoes;
+    }
+        
+
 	public Produto(int id, String nome, String descricao, String codigo, double precoCusto, double precoVenda,
 			String tempoPreparo, String observacoes, TipoProduto tipoProduto, boolean ativo) {
 		super();

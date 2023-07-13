@@ -34,6 +34,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     private TelaDadosInvalidos telaDadosInvalidos;
     private Funcionario funcionario;
     private boolean status;
+ 
 
     public TelaCadastroCliente(Funcionario funcionario) {  
         initComponents();
@@ -268,7 +269,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonBuscarActionPerformed
 
     private void buttonTelaPedidoComandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTelaPedidoComandaActionPerformed
-        TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal();
+        TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal(funcionario);
         telaMenuPrincipal.setVisible(true);
         dispose();
 
@@ -279,7 +280,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtRuaActionPerformed
 
     private void buttonVoltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltar1ActionPerformed
-        TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal();
+        TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal(funcionario);
         // Torna a outra janela visível
         telaMenuPrincipal.setVisible(true);
         dispose();
@@ -308,7 +309,7 @@ public class TelaCadastroCliente extends javax.swing.JFrame {
         cliente.getEndereco().setRua(txtRua.getText());
         cliente.setTelefone(txtTelefone.getText());
         cliente.setStatus(status);
-        cliente.setObservacao(observacao);
+        cliente.setObservacao(txtObservacao.getText());
 
 
         

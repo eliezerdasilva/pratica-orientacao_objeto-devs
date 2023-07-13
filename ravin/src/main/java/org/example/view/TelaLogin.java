@@ -5,6 +5,7 @@
 package org.example.view;
 
 import java.awt.Color;
+import org.example.model.Funcionario;
 
 /**
  *
@@ -12,9 +13,7 @@ import java.awt.Color;
  */
 public class TelaLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaLogin
-     */
+    private Funcionario funcionario;
     public TelaLogin() {
         initComponents();
         setLocationRelativeTo(null);
@@ -73,7 +72,11 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal();
+        // Consulta Banco
+        
+        // Resultado 
+        
+        TelaMenuPrincipal telaMenuPrincipal = new TelaMenuPrincipal(funcionario);
          telaMenuPrincipal.setVisible(true);
          dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -4,16 +4,17 @@
  */
 package org.example.view;
 
+import org.example.model.Funcionario;
+
 /**
  *
  * @author frete
  */
 public class TelaMenuPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaMenuPrincipal
-     */
-    public TelaMenuPrincipal() {
+    private Funcionario funcionario;
+    public TelaMenuPrincipal(Funcionario funcionario) {
+        this.funcionario = funcionario;
         initComponents();
     }
 
@@ -36,6 +37,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -101,6 +103,14 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jLabel2.setText("Funcionario");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 770, -1, -1));
 
+        jButton7.setText("jButton7");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 220, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -111,13 +121,13 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente();
+        TelaCadastroCliente telaCadastroCliente = new TelaCadastroCliente(funcionario);
          telaCadastroCliente.setVisible(true);
          dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        TelaCadastroFuncionario telaCadastroFuncionario = new TelaCadastroFuncionario();
+        TelaCadastroFuncionario telaCadastroFuncionario = new TelaCadastroFuncionario(funcionario);
          telaCadastroFuncionario.setVisible(true);
          dispose(); 
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -128,40 +138,12 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
          dispose();   // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+      TelaCadastroCardapio telaCadastroCardapio = new TelaCadastroCardapio();
+         telaCadastroCardapio.setVisible(true);
+         dispose(); 
+    }//GEN-LAST:event_jButton7ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaMenuPrincipal().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -170,6 +152,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
