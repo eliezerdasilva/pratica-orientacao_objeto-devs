@@ -1,0 +1,10 @@
+
+x	java:S116"WRename this field "MenuCardapio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ñÂşÿÿÿÿ8¬Äù¨–1
+r	java:S116"VRename this field "MenuCliente" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»—şª8¬Äù¨–1
+r	java:S116"VRename this field "MenuComanda" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú’ùå8¬Äù¨–1
+v	java:S116"ZRename this field "MenuFuncionario" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò˜ôğ8¬Äù¨–1
+q	java:S116"URename this field "MenuPedido" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿òÀÖ8¬Äù¨–1
+r	java:S116"VRename this field "MenuProduto" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğï¹Ó8¬Äù¨–1
+t	java:S116"SRename this field "MenuSair" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥˜à—øÿÿÿÿ8­Äù¨–1
+£
+java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(›Á’Šúÿÿÿÿ8­Äù¨–1
