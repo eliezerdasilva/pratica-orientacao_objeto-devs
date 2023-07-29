@@ -1,0 +1,16 @@
+
+m	java:S116"SRename this field "CriedoEm" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ççÈªûÿÿÿÿ
+j	java:S116"URename this field "AlteradoEm" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€Ùù¿
+i	java:S116"TRename this field "CriadoPor" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€åà¾
+p	java:S116"VRename this field "AlteradoPor" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äè„Áøÿÿÿÿ
+V	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(¼Ö·Ð
+M
+java:S1135"2Complete the task associated to this TODO comment.(ƒŠ® úÿÿÿÿ
+G
+java:S1068",Remove this unused "CriedoEm" private field.(ççÈªûÿÿÿÿ
+D
+java:S1068".Remove this unused "AlteradoEm" private field.(€Ùù¿
+C
+java:S1068"-Remove this unused "CriadoPor" private field.(€åà¾
+J
+java:S1068"/Remove this unused "AlteradoPor" private field.(äè„Áøÿÿÿÿ
