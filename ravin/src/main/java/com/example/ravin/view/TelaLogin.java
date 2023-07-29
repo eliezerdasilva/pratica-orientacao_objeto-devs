@@ -17,7 +17,7 @@ public class TelaLogin extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("TelaLogin.fxml"));
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/ravin/TelaLogin.fxml"));
         Parent root = loader.load();
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

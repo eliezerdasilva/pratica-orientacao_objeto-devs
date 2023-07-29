@@ -4,11 +4,11 @@
  */
 package com.example.ravin.repository;
 
+import com.example.ravin.interfaces.InterfaceCliente;
+import com.example.ravin.model.Cliente;
+
 import java.util.ArrayList;
-import org.example.controller.ComandaController;
-import org.example.interfaces.InterfaceCliente;
-import org.example.interfaces.InterfaceComanda;
-import org.example.model.Cliente;
+
 
 /**
  *

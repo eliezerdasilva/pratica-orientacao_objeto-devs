@@ -4,8 +4,10 @@
  */
 package com.example.ravin.interfaces;
 
+import com.example.ravin.model.Pedido;
+
 import java.util.ArrayList;
-import org.example.model.Pedido;
+
 
 /**
  *

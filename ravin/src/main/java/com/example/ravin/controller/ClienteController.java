@@ -4,12 +4,13 @@
  */
 package com.example.ravin.controller;
 
+import com.example.ravin.model.Auditavel;
+import com.example.ravin.model.Cliente;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
-import org.example.model.Auditavel;
-import org.example.model.Cliente;
 
 /**
  *

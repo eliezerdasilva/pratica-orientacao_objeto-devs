@@ -4,9 +4,9 @@
  */
 package com.example.ravin.interfaces;
 
+import com.example.ravin.model.Funcionario;
+
 import java.util.ArrayList;
-import org.example.model.Cliente;
-import org.example.model.Funcionario;
 
 /**
  *

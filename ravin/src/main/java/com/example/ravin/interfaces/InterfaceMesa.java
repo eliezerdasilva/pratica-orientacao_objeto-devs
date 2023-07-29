@@ -4,8 +4,10 @@
  */
 package com.example.ravin.interfaces;
 
+import com.example.ravin.model.Mesa;
+
 import java.util.ArrayList;
-import org.example.model.Mesa;
+
 
 /**
  *

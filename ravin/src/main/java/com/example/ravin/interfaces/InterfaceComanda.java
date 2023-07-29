@@ -5,8 +5,10 @@
 package com.example.ravin.interfaces;
 
 
+import com.example.ravin.model.Comanda;
+
 import java.util.ArrayList;
-import org.example.model.Comanda;
+
 
 /**
  *

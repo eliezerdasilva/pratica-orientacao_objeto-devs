@@ -1,7 +1,9 @@
 package com.example.ravin.model;
 
 
-import org.example.enumerador.Alergia;
+
+
+import com.example.ravin.enumerador.Alergia;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;

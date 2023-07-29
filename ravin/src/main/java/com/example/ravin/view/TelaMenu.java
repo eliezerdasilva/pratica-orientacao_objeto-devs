@@ -15,7 +15,7 @@ public class TelaMenu extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("TelaMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/ravin/TelaMenu.fxml"));
         Parent root = loader.load();
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

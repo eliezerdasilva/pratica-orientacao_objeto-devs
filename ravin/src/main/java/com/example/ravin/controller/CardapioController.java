@@ -4,7 +4,9 @@
  */
 package com.example.ravin.controller;
 
-import org.example.model.Cardapio;
+
+import com.example.ravin.model.Cardapio;
+
 import java.util.ArrayList;
 
 public class CardapioController {

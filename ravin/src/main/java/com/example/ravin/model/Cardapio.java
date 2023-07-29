@@ -4,8 +4,10 @@
  */
 package com.example.ravin.model;
 
+import com.example.ravin.enumerador.Disponibilidade;
+
 import java.util.ArrayList;
-import org.example.enumerador.Disponibilidade;
+
 
 /**
  *

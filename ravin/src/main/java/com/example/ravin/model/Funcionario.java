@@ -1,9 +1,10 @@
 package com.example.ravin.model;
 
-import org.example.enumerador.Cargo;
-import org.example.enumerador.Disponibilidade;
-import org.example.enumerador.Escolaridade;
-import org.example.enumerador.EstadoCivil;
+
+import com.example.ravin.enumerador.Cargo;
+import com.example.ravin.enumerador.Disponibilidade;
+import com.example.ravin.enumerador.Escolaridade;
+import com.example.ravin.enumerador.EstadoCivil;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;

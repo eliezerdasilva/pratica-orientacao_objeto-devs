@@ -4,7 +4,8 @@
  */
 package com.example.ravin.repository;
 
-import org.example.model.Cardapio;
+
+import com.example.ravin.model.Cardapio;
 
 /**
  *

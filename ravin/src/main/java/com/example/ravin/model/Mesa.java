@@ -1,6 +1,8 @@
 package com.example.ravin.model;
 
-import org.example.enumerador.StatusMesa;
+
+
+import com.example.ravin.enumerador.StatusMesa;
 
 import java.sql.Timestamp;
 import java.util.List;

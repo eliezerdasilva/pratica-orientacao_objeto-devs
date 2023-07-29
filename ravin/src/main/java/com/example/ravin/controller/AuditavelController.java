@@ -4,8 +4,10 @@
  */
 package com.example.ravin.controller;
 
+import com.example.ravin.model.Auditavel;
+
 import java.util.ArrayList;
-import org.example.model.Auditavel;
+
 
 /**
  *

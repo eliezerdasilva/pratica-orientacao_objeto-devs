@@ -1,7 +1,8 @@
 package com.example.ravin.model;
 
-import org.example.enumerador.FormaPagamento;
-import org.example.enumerador.StatusComanda;
+
+import com.example.ravin.enumerador.FormaPagamento;
+import com.example.ravin.enumerador.StatusComanda;
 
 import java.sql.Timestamp;
 import java.util.List;

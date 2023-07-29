@@ -4,10 +4,12 @@
  */
 package com.example.ravin.repository;
 
+import com.example.ravin.controller.MesaController;
+import com.example.ravin.interfaces.InterfaceMesa;
+import com.example.ravin.model.Mesa;
+
 import java.util.ArrayList;
-import org.example.controller.MesaController;
-import org.example.interfaces.InterfaceMesa;
-import org.example.model.Mesa;
+
 
 /**
  *

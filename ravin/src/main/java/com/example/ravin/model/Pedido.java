@@ -1,7 +1,6 @@
 package com.example.ravin.model;
 
-
-import org.example.enumerador.StatusPreparoPedido;
+import com.example.ravin.enumerador.StatusPreparoPedido;
 
 import java.sql.Timestamp;
 

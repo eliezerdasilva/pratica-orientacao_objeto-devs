@@ -4,11 +4,13 @@
  */
 package com.example.ravin.repository;
 
+import com.example.ravin.controller.FuncionarioController;
+import com.example.ravin.interfaces.InterfaceFuncionario;
+import com.example.ravin.interfaces.InterfaceMetodosGerais;
+import com.example.ravin.model.Funcionario;
+
 import java.util.ArrayList;
-import org.example.controller.FuncionarioController;
-import org.example.interfaces.InterfaceFuncionario;
-import org.example.interfaces.InterfaceMetodosGerais;
-import org.example.model.Funcionario;
+
 
 /**
  *

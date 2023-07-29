@@ -1,7 +1,7 @@
 package com.example.ravin.model;
 
 
-import org.example.enumerador.TipoProduto;
+import com.example.ravin.enumerador.TipoProduto;
 
 import java.sql.Timestamp;
 import java.time.LocalTime;

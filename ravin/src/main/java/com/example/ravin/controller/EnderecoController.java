@@ -4,8 +4,10 @@
  */
 package com.example.ravin.controller;
 
+import com.example.ravin.model.Endereco;
+
 import java.util.ArrayList;
-import org.example.model.Endereco;
+
 
 /**
  *

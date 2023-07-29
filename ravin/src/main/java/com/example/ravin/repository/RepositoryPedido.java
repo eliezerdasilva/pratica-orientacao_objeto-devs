@@ -4,16 +4,18 @@
  */
 package com.example.ravin.repository;
 
+import com.example.ravin.controller.PedidoController;
+import com.example.ravin.interfaces.InterfacePedido;
+import com.example.ravin.model.Pedido;
+
 import java.util.ArrayList;
-import org.example.controller.PedidoController;
-import org.example.interfaces.InterfacePedido;
-import org.example.model.Pedido;
+
 
 /**
  *
  * @author frete
  */
-public class RepositoryPedido implements InterfacePedido{
+public class RepositoryPedido implements InterfacePedido {
     
     private static PedidoController instancia;
     
