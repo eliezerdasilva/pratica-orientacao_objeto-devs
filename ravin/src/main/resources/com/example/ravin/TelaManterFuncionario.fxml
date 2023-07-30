@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="756.0" prefWidth="477.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <DatePicker layoutX="185.0" layoutY="380.0" prefHeight="31.0" prefWidth="119.0" />
+      <Button fx:id="buttonAlterar" layoutX="330.0" layoutY="666.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" text="Alterar" />
+      <Button fx:id="buttonExcluir" layoutX="330.0" layoutY="622.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" text="Excluir" />
+      <Button fx:id="buttonCadastrar" layoutX="330.0" layoutY="579.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" text="Cadastrar" />
+      <Label layoutX="39.0" layoutY="385.0" text="Data de Nascimento:" />
+      <TextField fx:id="txtBairro" layoutX="119.0" layoutY="612.0" />
+      <TextField fx:id="txtRua" layoutX="119.0" layoutY="662.0" />
+      <TextField fx:id="txtCidade" layoutX="117.0" layoutY="568.0" />
+      <ComboBox fx:id="comboBoxEstado" layoutX="117.0" layoutY="525.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="txtCep" layoutX="119.0" layoutY="479.0" />
+      <Label layoutX="66.0" layoutY="667.0" text="Rua :" />
+      <Label layoutX="59.0" layoutY="617.0" text="Bairro :" />
+      <Label layoutX="51.0" layoutY="573.0" text="Cidade :" />
+      <Label layoutX="48.0" layoutY="530.0" text="Estado :" />
+      <Label layoutX="60.0" layoutY="484.0" text="Cep :" />
+      <CheckBox fx:id="comboBoxInativo" layoutX="193.0" layoutY="348.0" mnemonicParsing="false" text="Inativo" />
+      <CheckBox fx:id="comboBoxAtivo" layoutX="110.0" layoutY="348.0" mnemonicParsing="false" text="Ativo" />
+      <TextField fx:id="txtTelefone" layoutX="107.0" layoutY="296.0" />
+      <TextField fx:id="txtEmail" layoutX="107.0" layoutY="260.0" />
+      <Label layoutX="48.0" layoutY="337.0" />
+      <Label layoutX="39.0" layoutY="301.0" text="Telefone :" />
+      <Label layoutX="48.0" layoutY="265.0" text="Emial:" />
+      <TextField fx:id="txtNome" layoutX="107.0" layoutY="218.0" />
+      <Button fx:id="buttonBuscaCliente" layoutX="308.0" layoutY="176.0" mnemonicParsing="false" text="Busca" />
+      <TextField fx:id="txtCpf" layoutX="107.0" layoutY="176.0" />
+      <Label layoutX="58.0" layoutY="181.0" text="CPF :" />
+      <Label layoutX="48.0" layoutY="223.0" text="Nome : " />
+      <Label layoutX="58.0" layoutY="142.0" text="Consultar Cliente" />
+      <Label layoutX="58.0" layoutY="79.0" text="Manter Cliente" />
+   </children>
+</AnchorPane>

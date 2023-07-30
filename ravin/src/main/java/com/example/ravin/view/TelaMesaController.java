@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
 
-public class TelaCardapioController implements Initializable {
+public class TelaMesaController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

@@ -14,11 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author frete
- */
+
 public class TelaLoginController implements Initializable {
 
 

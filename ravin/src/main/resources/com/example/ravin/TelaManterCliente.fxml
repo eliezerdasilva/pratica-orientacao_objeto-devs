@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="datePickerNascimento" prefHeight="791.0" prefWidth="478.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Label layoutX="48.0" layoutY="69.0" text="Manter Cliente" />
+      <Label layoutX="48.0" layoutY="132.0" text="Consultar Cliente" />
+      <Label layoutX="38.0" layoutY="213.0" text="Nome : " />
+      <Label layoutX="48.0" layoutY="171.0" text="CPF :" />
+      <TextField fx:id="txtCpf" layoutX="97.0" layoutY="166.0" />
+      <Button fx:id="buttonBuscaCliente" layoutX="298.0" layoutY="166.0" mnemonicParsing="false" text="Busca" />
+      <TextField fx:id="txtNome" layoutX="97.0" layoutY="208.0" />
+      <Label layoutX="38.0" layoutY="255.0" text="Emial:" />
+      <Label layoutX="29.0" layoutY="291.0" text="Telefone :" />
+      <Label layoutX="38.0" layoutY="327.0" />
+      <TextField fx:id="txtEmail" layoutX="97.0" layoutY="250.0" />
+      <TextField fx:id="txtTelefone" layoutX="97.0" layoutY="286.0" />
+      <CheckBox fx:id="comboBoxAtivo" layoutX="100.0" layoutY="338.0" mnemonicParsing="false" text="Ativo" />
+      <CheckBox fx:id="comboBoxInativo" layoutX="183.0" layoutY="338.0" mnemonicParsing="false" text="Inativo" />
+      <Label layoutX="50.0" layoutY="474.0" text="Cep :" />
+      <Label layoutX="38.0" layoutY="520.0" text="Estado :" />
+      <Label layoutX="41.0" layoutY="563.0" text="Cidade :" />
+      <Label layoutX="49.0" layoutY="607.0" text="Bairro :" />
+      <Label layoutX="56.0" layoutY="657.0" text="Rua :" />
+      <TextField fx:id="txtCep" layoutX="109.0" layoutY="469.0" />
+      <ComboBox fx:id="comboBoxEstado" layoutX="107.0" layoutY="515.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="txtCidade" layoutX="107.0" layoutY="558.0" />
+      <TextField fx:id="txtRua" layoutX="109.0" layoutY="652.0" />
+      <TextField fx:id="txtBairro" layoutX="109.0" layoutY="602.0" />
+      <Label layoutX="29.0" layoutY="375.0" text="Data de Nascimento:" />
+      <Label layoutX="41.0" layoutY="420.0" text="Alergia" />
+      <ComboBox fx:id="comboBoxAlergia" layoutX="105.0" layoutY="415.0" prefHeight="31.0" prefWidth="187.0" />
+      <CheckBox fx:id="CheckBoxVip" layoutX="117.0" layoutY="700.0" mnemonicParsing="false" text="Vip" />
+      <Button fx:id="buttonCadastrar" layoutX="320.0" layoutY="569.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" text="Cadastrar" />
+      <Button fx:id="buttonExcluir" layoutX="320.0" layoutY="612.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" text="Excluir" />
+      <Button fx:id="buttonAlterar" layoutX="320.0" layoutY="656.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="131.0" text="Alterar" />
+      <DatePicker layoutX="175.0" layoutY="370.0" prefHeight="31.0" prefWidth="119.0" />
+   </children>
+</AnchorPane>
