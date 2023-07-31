@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+
+<AnchorPane prefHeight="355.0" prefWidth="298.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1">
+   <children>
+      <Button fx:id="buttonCadastrar" layoutX="101.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Cadastro" />
+      <Button fx:id="buttonAlterar" layoutX="101.0" layoutY="227.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Alterar" />
+      <Button fx:id="buttonExcluir" layoutX="101.0" layoutY="259.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Excluir" />
+      <Button fx:id="buttonVoltar" layoutX="101.0" layoutY="291.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Voltar" />
+      <Label layoutX="106.0" layoutY="31.0" prefHeight="51.0" prefWidth="87.0" text="Mesa" textAlignment="CENTER">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="94.0" prefHeight="17.0" prefWidth="87.0" text="Codigo Mesa" />
+      <Spinner fx:id="SpinerCodigoMesa" layoutX="130.0" layoutY="90.0" />
+      <Spinner fx:id="spinnerQuantidadePessoas" layoutX="167.0" layoutY="128.0" prefHeight="25.0" prefWidth="114.0" />
+      <Label layoutX="27.0" layoutY="132.0" text="Quantidade de Pessoas" />
+   </children>
 </AnchorPane>
-

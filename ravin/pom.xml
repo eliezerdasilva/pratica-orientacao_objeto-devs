@@ -4,32 +4,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example.ravin</groupId>
-    <artifactId>ravin</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>my-java-fx-project</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>ravin</name>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <javafx.version>17.0.8</javafx.version>
     </properties>
 
     <dependencies>
-        <!-- Dependências do JavaFX -->
+        <!-- JavaFX Dependencies -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>17.0.8</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>17.0.8</version>
+            <version>${javafx.version}</version>
         </dependency>
-
     </dependencies>
 
-    
 </project>
