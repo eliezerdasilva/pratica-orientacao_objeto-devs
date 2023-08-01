@@ -12,59 +12,69 @@ public class TelaMenuController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		System.out.println(usuario);
+		System.out.println(senha);
 		
 	}
 
 
+	private String usuario;
 
+	
+	private String senha;
+	
+	public void setUsuarioSenha(String usuario, String senha) {
+       this.usuario = usuario;
+       this.senha = senha;
+    }
 
-    @FXML
-    private Menu MenuCardapio;
+	@FXML
+	private Menu MenuCardapio;
 
-    @FXML
-    private ButtonBar MenuCliente;
+	@FXML
+	private ButtonBar MenuCliente;
 
-    @FXML
-    private Menu MenuComanda;
+	@FXML
+	private Menu MenuComanda;
 
-    @FXML
-    private Menu MenuFuncionario;
+	@FXML
+	private Menu MenuFuncionario;
 
-    @FXML
-    private Menu MenuPedido;
+	@FXML
+	private Menu MenuPedido;
 
-    @FXML
-    private Menu MenuProduto;
+	@FXML
+	private Menu MenuProduto;
 
-    @FXML
-    private Menu MenuSair;
+	@FXML
+	private Menu MenuSair;
 
-    @FXML
-    private Button buttonIniciarExpediente;
+	@FXML
+	private Button buttonIniciarExpediente;
 
-    @FXML
-    private Pane painelDados;
+	@FXML
+	private Pane painelDados;
 
-    @FXML
-    private RadioButton radiuButtonAtivo;
+	@FXML
+	private RadioButton radiuButtonAtivo;
 
-    @FXML
-    private RadioButton radiunButtonInativo;
+	@FXML
+	private RadioButton radiunButtonInativo;
 
-    @FXML
-    private TextField txtCarrgoFuncionario;
+	@FXML
+	private TextField txtCarrgoFuncionario;
 
-    @FXML
-    private TextField txtNomeFuncionario;
+	@FXML
+	private TextField txtNomeFuncionario;
 
-    @FXML
-    private Label txtSetarNome;
+	@FXML
+	private Label txtSetarNome;
 
-    @FXML
-    private TextField txtTelefone;
+	@FXML
+	private TextField txtTelefone;
 
-    @FXML
-    public void telaFuncionario(){}
+	@FXML
+	public void telaFuncionario() {
+	}
 
 }

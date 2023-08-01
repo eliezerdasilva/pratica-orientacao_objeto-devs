@@ -17,6 +17,9 @@ public class TelaManterCliente extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+    	//Implemetar os arraylist do combobox 
+    	
+    	
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/ravin/TelaManterCliente.fxml"));
         Parent root = loader.load();
         primaryStage.setScene(new Scene(root));

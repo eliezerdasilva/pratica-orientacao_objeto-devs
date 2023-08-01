@@ -9,7 +9,11 @@ import java.io.IOException;
 
 public class TelaMenu extends Application {
 
-    public static void main(String[] args) {
+    public TelaMenu(String usuario, String senha) {
+		
+	}
+
+	public static void main(String[] args) {
         launch(args);
     }
 

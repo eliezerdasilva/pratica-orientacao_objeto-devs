@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<fx:root prefHeight="802.0" prefWidth="1032.0" type="AnchorPane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="802.0" prefWidth="1032.0" type="AnchorPane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.example.ravin.view.TelaManterCardapio">
    <children>
       <Label layoutX="41.0" layoutY="45.0" prefHeight="17.0" prefWidth="212.0" text="Cardapio">
          <font>
@@ -49,4 +49,4 @@
       <Button fx:id="buttonVoltarMenu" layoutX="877.0" layoutY="697.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Voltar" />
       <Button fx:id="buttonCadastrarCardapio" layoutX="877.0" layoutY="617.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Cadastrar Cardapio" />
    </children>
-</fx:root>
+</AnchorPane>
