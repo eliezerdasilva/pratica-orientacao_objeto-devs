@@ -25,9 +25,12 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 public class TelaManterClienteController implements Initializable {
@@ -63,19 +66,8 @@ public class TelaManterClienteController implements Initializable {
 
 	@FXML
 	private TextField txtEstado;
-
-	// Outros elementos do FXML...
-
-	@FXML
-	private void comboBoxAction() {
-		// String selectedItem = comboBoxEstado.getSelectionModel().getSelectedItem();
-		// if (selectedItem != null) {
-		// Aqui você pode realizar ação com o item selecionado no ComboBoxEstado
-		// Por exemplo, acessar os atributos do item, processá-lo, etc.
-		// System.out.println(selectedItem);
-		// }
-	}
-
+	
+	
 	@FXML
 	private CheckBox comboBoxInativo;
 
@@ -115,6 +107,17 @@ public class TelaManterClienteController implements Initializable {
     @FXML
     private Label labelErro;
 
+    @FXML
+    private TableColumn<Cliente, String> colunaCpf;
+
+    @FXML
+    private TableColumn<Cliente, String> colunaEmail;
+    @FXML
+    private TableColumn<Cliente, String> colunaNome;
+    
+
+    @FXML
+    private TableView<Cliente> tableCliente;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -125,6 +128,9 @@ public class TelaManterClienteController implements Initializable {
 
 		// Check para ativo e inativo
 		configureCheckBoxes();
+		
+		//preencher tabela
+		listarClientes();
 
 	}
 
@@ -352,6 +358,9 @@ public class TelaManterClienteController implements Initializable {
 		txtBairro.setText("");
 		txtRua.setText("");
 	}
+	private void limparCamposCliente() {
+		
+	}
 
 	@FXML
 	private void onCepKeyReleased() {
@@ -361,5 +370,32 @@ public class TelaManterClienteController implements Initializable {
 		} else {
 			limparCamposEndereco();
 		}
+	}
+	@FXML 
+	public void alterarCliente() {
+		
+		Cliente cliente = setarObjetoCliente();
+		Endereco endereco = setarObjetoEndereco();
+		if (cliente == null || endereco == null) {
+			labelErro.setVisible(true);
+			
+		} else {
+			cliente.setEndereco(endereco);
+			//
+			
+		}
+	}
+	public void listarClientes() {
+		 ObservableList<Cliente> listaClientes = FXCollections.observableArrayList(
+		            new Cliente("João", 1234567800l, "joao@email.com"),
+		            new Cliente("Maria", 9876542100l , "maria@email.com")
+		            
+		        );
+		 colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+	        colunaCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+	        colunaEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+	        // Preenche a tabela com os dados dos clientes
+	        tableCliente.setItems(listaClientes);
 	}
 }

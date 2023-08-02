@@ -16,7 +16,7 @@ public abstract class Pessoa extends Auditavel{
     private Endereco endereco;
 
     private LocalDate dataNascimento;
-
+    private String email;
 
     private String observacao;
 
@@ -25,18 +25,37 @@ public abstract class Pessoa extends Auditavel{
     public Pessoa() {
     }
 
-    public Pessoa(int id, String nome, Long cpf, String telefone, Endereco endereco, LocalDate dataNascimento, String observacao, boolean status) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.endereco = endereco;
-        this.dataNascimento = dataNascimento;
-        this.observacao = observacao;
-        this.status = status;
-    }
+   
 
-    public int getId() {
+    public Pessoa(int id, String nome, Long cpf, String telefone, Endereco endereco, LocalDate dataNascimento,
+			String email, String observacao, boolean status) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.endereco = endereco;
+		this.dataNascimento = dataNascimento;
+		this.email = email;
+		this.observacao = observacao;
+		this.status = status;
+	}
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+	public int getId() {
         return id;
     }
 

@@ -18,8 +18,14 @@ public class Cliente extends Pessoa {
 	private Funcionario CriadoPor;
 	private Funcionario AlteradoPor;
 	
+	
+	
 	public Cliente() {
-		// TODO Auto-generated constructor stub
+		super();
+	}
+
+	public Cliente (String nome,Long cpf,String email) {
+		
 	}
 
 	public Cliente(Alergia alergias, boolean vip, Timestamp criedoEm, Timestamp alteradoEm, Funcionario criadoPor, Funcionario alteradoPor) {
@@ -31,8 +37,12 @@ public class Cliente extends Pessoa {
 		AlteradoPor = alteradoPor;
 	}
 
-	public Cliente(int id, String nome, Long cpf, String telefone, Endereco endereco, LocalDate dataNascimento, String observacao, boolean status, Alergia alergias, boolean vip, Timestamp criedoEm, Timestamp alteradoEm, Funcionario criadoPor, Funcionario alteradoPor) {
-		super(id, nome, cpf, telefone, endereco, dataNascimento, observacao, status);
+	
+
+    public Cliente(int id, String nome, Long cpf, String telefone, Endereco endereco, LocalDate dataNascimento,
+			String email, String observacao, boolean status, Alergia alergias, boolean vip, Timestamp criedoEm,
+			Timestamp alteradoEm, Funcionario criadoPor, Funcionario alteradoPor) {
+		super(id, nome, cpf, telefone, endereco, dataNascimento, email, observacao, status);
 		this.alergias = alergias;
 		this.vip = vip;
 		CriedoEm = criedoEm;
@@ -41,7 +51,7 @@ public class Cliente extends Pessoa {
 		AlteradoPor = alteradoPor;
 	}
 
-    public Alergia getAlergias() {
+	public Alergia getAlergias() {
         return alergias;
     }
 
